@@ -82,11 +82,26 @@ public class Main {
                 }
             }
         }
+    }
 
+    static void task3() {
+        int sum_del = cin(1, 200);
+        int cur_sum;
+        for (int num = 1; num <= 200; num++) {
+            cur_sum = 0;
+            for (int i = 1; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    cur_sum += i;
+                }
+            }
+            if (cur_sum == sum_del) {
+                System.out.println("У числа " + num + " сумма делителей = " + sum_del);
+            }
+        }
     }
 
     public static void main(String[] args) {
-        task2();
+        task3();
 
     }
 }
