@@ -15,6 +15,8 @@ x и y, выданных случайным образом в диапазоне
 */
 
 import java.util.Scanner;
+import java.util.Random;
+import java.lang.Math;
 
 public class Main {
 
@@ -50,12 +52,12 @@ public class Main {
 
         while (number != 0) {
             if (number % 10 % 2 == 0) {
-                if (number % 10 == 5) {
-                    ++five_count;
-                }
                 System.out.println("цифра " + number % 10 + " четная");
             } else {
                 System.out.println("цифра " + number % 10 + " нечетная");
+                if (number % 10 == 5) {
+                    ++five_count;
+                }
                 ++uneven;
             }
             number /= 10;
@@ -100,8 +102,31 @@ public class Main {
         }
     }
 
+    static void task4() {
+        Random rn = new Random();
+        //int x = rn.nextInt(39) - 14;
+        int x = -1;
+        int y = 0;
+        //int y = rn.nextInt(39) - 14;
+        System.out.println(x);
+        System.out.println(y);
+
+        if (x <= -1) {
+            double a1 = Math.cos(y);
+            double a2 = Math.pow(Math.log(Math.abs(x)), 2);
+            double a3 = Math.log(Math.abs(a1 - 2 * a2));
+            System.out.println(a3);
+        }
+        else if (x > -1 && x < 5) {
+            System.out.println( (Math.log(Math.abs(x)) + Math.pow(Math.E, -1*y)) / (y*y + 1.0/x*x +3) );
+        }
+        else {
+            System.out.println( Math.sqrt(Math.log(x*x)+2) );
+        }
+    }
+
     public static void main(String[] args) {
-        task3();
+        task4();
 
     }
 }
